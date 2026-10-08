@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Live Ops Helpdesk</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =================================
+       CONNECTION BANNER
+  ================================== -->
+
+  <div
+    id="connectionBanner"
+    class="connection-banner hidden"
+  >
+    ⚠️ Connection lost. Reconnecting...
+  </div>
+
+
+  <!-- =================================
+       HEADER
+  ================================== -->
+
+  <header class="app-header">
+
+    <div>
+      <p class="eyebrow">
+        RapidDispatch Freight & Logistics
+      </p>
+
+      <h1>Live Ops Helpdesk</h1>
+
+      <p class="subtitle">
+        Real-time collaborative ticket management
+      </p>
+    </div>
+
+    <div class="agent-section">
+
+      <label for="agentName">
+        Agent Name
+      </label>
+
+      <input
+        id="agentName"
+        type="text"
+        placeholder="Enter your name"
+        maxlength="50"
+      >
+
+      <span
+        id="connectionStatus"
+        class="status offline"
+      >
+        ● Offline
+      </span>
+
+    </div>
+
+  </header>
+
+
+  <!-- =================================
+       MAIN CONTENT
+  ================================== -->
+
+  <main class="dashboard">
+
+    <section class="dashboard-toolbar">
+
+      <div>
+        <h2>Support Tickets</h2>
+
+        <p id="ticketCount">
+          Loading tickets...
+        </p>
+      </div>
+
+      <button
+        id="refreshButton"
+        type="button"
+      >
+        Refresh
+      </button>
+
+    </section>
+
+
+    <!-- =================================
+         TICKET LIST
+    ================================== -->
+
+    <section
+      id="ticketList"
+      class="ticket-list"
+    >
+
+      <div class="loading-state">
+        Loading tickets...
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =================================
+       SOCKET.IO CLIENT
+  ================================== -->
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

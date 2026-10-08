@@ -1,0 +1,584 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  background: #f4f7fb;
+  color: #172033;
+  min-height: 100vh;
+}
+
+
+/* =================================
+   CONNECTION BANNER
+================================= */
+
+.connection-banner {
+  width: 100%;
+  padding: 12px 20px;
+
+  background: #dc2626;
+  color: white;
+
+  text-align: center;
+  font-weight: 600;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.connection-banner.hidden {
+  display: none;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  padding: 32px 48px;
+
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  margin-bottom: 7px;
+}
+
+.app-header h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 15px;
+}
+
+
+/* =================================
+   AGENT SECTION
+================================= */
+
+.agent-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.agent-section label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.agent-section input {
+  width: 180px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  outline: none;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.agent-section input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =================================
+   CONNECTION STATUS
+================================= */
+
+.status {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status.online {
+  color: #16a34a;
+}
+
+.status.offline {
+  color: #dc2626;
+}
+
+
+/* =================================
+   DASHBOARD
+================================= */
+
+.dashboard {
+  width: min(1200px, 92%);
+  margin: 35px auto;
+}
+
+.dashboard-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.dashboard-toolbar h2 {
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+#ticketCount {
+  color: #64748b;
+  font-size: 14px;
+}
+
+#refreshButton {
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  padding: 10px 18px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+#refreshButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+
+/* =================================
+   TICKET LIST
+================================= */
+
+.ticket-list {
+  display: grid;
+  gap: 14px;
+}
+
+
+/* =================================
+   TICKET CARD
+================================= */
+
+.ticket-card {
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.05);
+
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ticket-card:hover {
+  border-color: #cbd5e1;
+}
+
+
+/* =================================
+   TICKET INFORMATION
+================================= */
+
+.ticket-number {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+.ticket-title {
+  font-size: 18px;
+  font-weight: 700;
+
+  margin-bottom: 7px;
+}
+
+.ticket-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.ticket-customer {
+  font-size: 14px;
+  color: #475569;
+}
+
+
+/* =================================
+   BADGES
+================================= */
+
+.ticket-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  margin-top: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-status {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-priority {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+
+/* =================================
+   TICKET ACTIONS
+================================= */
+
+.ticket-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 140px;
+}
+
+.lock-button {
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px 15px;
+
+  background: #0f172a;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lock-button:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+
+/* =================================
+   LOCKED TICKET
+================================= */
+
+.ticket-card.locked {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.ticket-card.locked .ticket-title {
+  color: #475569;
+}
+
+.ticket-card.locked .ticket-description {
+  color: #94a3b8;
+}
+
+.lock-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.lock-icon {
+  font-size: 22px;
+}
+
+.unlock-button {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  background: white;
+  color: #334155;
+
+  padding: 8px 12px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.unlock-button:hover {
+  background: #f8fafc;
+}
+
+
+/* =================================
+   EMPTY / LOADING STATES
+================================= */
+
+.loading-state,
+.empty-state,
+.error-state {
+  padding: 45px 20px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.error-state {
+  color: #dc2626;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 25px;
+  }
+
+  .agent-section {
+    width: 100%;
+  }
+
+  .agent-section input {
+    flex: 1;
+  }
+
+  .dashboard {
+    width: 94%;
+  }
+
+  .ticket-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-actions {
+    justify-content: flex-start;
+  }
+
+  .lock-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-toolbar {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  #refreshButton {
+    padding: 9px 13px;
+  }
+}
+/* =================================
+   EDIT PANEL
+================================= */
+
+.edit-panel {
+  width: 100%;
+  max-width: 430px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 16px;
+
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+
+.edit-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #334155;
+  font-size: 14px;
+
+  margin-bottom: 3px;
+}
+
+.edit-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.edit-panel input,
+.edit-panel textarea,
+.edit-panel select {
+  width: 100%;
+
+  padding: 9px 10px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+
+  background: white;
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-panel input:focus,
+.edit-panel textarea:focus,
+.edit-panel select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.edit-panel textarea {
+  min-height: 85px;
+
+  resize: vertical;
+}
+
+
+/* =================================
+   EDIT ACTIONS
+================================= */
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 4px;
+}
+
+.save-button {
+  border: none;
+  border-radius: 7px;
+
+  background: #16a34a;
+  color: white;
+
+  padding: 9px 13px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.save-button:hover {
+  background: #15803d;
+  transform: translateY(-1px);
+}
+
+.edit-actions .unlock-button {
+  padding: 9px 13px;
+}
